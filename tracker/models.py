@@ -18,13 +18,24 @@ class Workout (models.Model):
     date = models.DateField(auto_now_add=True)
     notes = models.TextField(blank=True)
 
+    def __str__(self):
+        return f"{self.user.username} - {self.workout_type} on {self.date}"
+
 class ExerciseLog (models.Model):
 
     workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name="exercises")
     exercise_name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return f"{self.exercise_name} - Workout: {self.workout.id}"
+
 
 class SetLog (models.Model):
 
-    exercise_log_id = models.ForeignKey(ExerciseLog, on_delete=models.CASCADE)
+    exercise_log = models.ForeignKey(ExerciseLog, on_delete=models.CASCADE, related_name="sets")
     set_number = models.IntegerField()
+    reps = models.IntegerField()
+    weight = models.FloatField()
+
+    def __str__(self):
+        return f"Set {self.set_number}: {self.reps} reps @ {self.weight}"
