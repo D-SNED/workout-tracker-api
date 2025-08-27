@@ -1,10 +1,17 @@
 from rest_framework import viewsets
 from .models import Workout, ExerciseLog, SetLog
 from .serializers import WorkoutSerializer, ExerciseLogSerializer, SetLogSerializer
-from rest_framework.response import Response
+
 
 
 class WorkoutViewSet(viewsets.ModelViewSet):
     queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
 
+class ExerciseLogViewSet(viewsets.ModelViewSet):
+    queryset = ExerciseLog.objects.all()
+    serializer_class = ExerciseLogSerializer
+
+class SetLogViewSet(viewsets.ModelViewSet):
+    queryset = SetLog.objects.all()
+    serializer_class = SetLogSerializer
