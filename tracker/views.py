@@ -5,16 +5,22 @@ from .serializers import WorkoutSerializer, ExerciseLogSerializer, SetLogSeriali
 
 
 class WorkoutViewSet(viewsets.ModelViewSet):
-    queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
+
+    def get_queryset(self):
+        return Workout.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
 class ExerciseLogViewSet(viewsets.ModelViewSet):
-    queryset = ExerciseLog.objects.all()
     serializer_class = ExerciseLogSerializer
 
+    def get_queryset(self):
+        return ExerciseLog.objects.filter(workout__user=self.request.user)
+
 class SetLogViewSet(viewsets.ModelViewSet):
-    queryset = SetLog.objects.all()
     serializer_class = SetLogSerializer
+
+    def get_queryset(self):
+        return SetLog.objects.filter(exercise_log__workout__user=self.request.user)

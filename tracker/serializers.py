@@ -4,7 +4,7 @@ from .models import Workout, ExerciseLog, SetLog
 class SetLogSerializer(serializers.ModelSerializer):
     class Meta:
         model = SetLog
-        fields = ["id", "set_number", "reps", "weight"]
+        fields = ["id", "exercise_log", "set_number", "reps", "weight"]
 
 class ExerciseLogSerializer(serializers.ModelSerializer):
 
@@ -12,7 +12,7 @@ class ExerciseLogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ExerciseLog
-        fields = ["id", "exercise_name", "sets"]
+        fields = ["id", "workout", "exercise_name", "sets"]
 
 class WorkoutSerializer(serializers.ModelSerializer):
 
@@ -20,4 +20,4 @@ class WorkoutSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Workout
-        fields = ["id", "workout_type", "date", "notes", "exercises"]
+        fields = ["id", "user", "workout_type", "date", "notes", "exercises"]
