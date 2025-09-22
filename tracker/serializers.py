@@ -1,22 +1,22 @@
 from rest_framework import serializers
-from .models import Workout, ExerciseLog, SetLog
+from .models import Workout, Exercise, Set
 
-class SetLogSerializer(serializers.ModelSerializer):
+class SetSerializer(serializers.ModelSerializer):
     class Meta:
-        model = SetLog
-        fields = ["id", "exercise_log", "set_number", "reps", "weight"]
+        model = Set
+        fields = ["id", "set_number", "reps", "weight"]
 
-class ExerciseLogSerializer(serializers.ModelSerializer):
+class ExerciseSerializer(serializers.ModelSerializer):
 
-    sets = SetLogSerializer(many=True, read_only=True)
+    sets = SetSerializer(many=True, read_only=True)
 
     class Meta:
-        model = ExerciseLog
-        fields = ["id", "workout", "exercise_name", "sets"]
+        model = Exercise
+        fields = ["id", "name", "sets"]
 
 class WorkoutSerializer(serializers.ModelSerializer):
 
-    exercises = ExerciseLogSerializer(many=True, read_only=True)
+    exercises = ExerciseSerializer(many=True, read_only=True)
 
     class Meta:
         model = Workout

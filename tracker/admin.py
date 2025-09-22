@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Workout, ExerciseLog, SetLog
+from .models import Workout, Exercise, Set
 
 admin.site.register(Workout)
-admin.site.register(ExerciseLog)
-admin.site.register(SetLog)
+admin.site.register(Exercise)
+admin.site.register(Set)

@@ -21,18 +21,18 @@ class Workout (models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.workout_type} on {self.date}"
 
-class ExerciseLog (models.Model):
+class Exercise (models.Model):
 
     workout = models.ForeignKey(Workout, on_delete=models.CASCADE, related_name="exercises")
-    exercise_name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"{self.exercise_name} - Workout: {self.workout.id}"
+        return f"{self.name} - Workout: {self.workout.id}"
 
 
-class SetLog (models.Model):
+class Set (models.Model):
 
-    exercise_log = models.ForeignKey(ExerciseLog, on_delete=models.CASCADE, related_name="sets")
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE, related_name="sets")
     set_number = models.IntegerField()
     reps = models.IntegerField()
     weight = models.FloatField()
