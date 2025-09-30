@@ -14,9 +14,22 @@ class ExerciseSerializer(serializers.ModelSerializer):
         model = Exercise
         fields = ["id", "name", "workout", "sets"]
 
+    def get_fields(self):
+        # print("inside get fields")
+        fields = super().get_fields()
+        request = self.context.get("request")
+        print(help(self))
+        # print(self.context)
+        if request and request.user.is_authenticated:
+            fields["workout"].queryset = Workout.objects.filter(user=request.user)
+        return fields
+
+
+
 class WorkoutSerializer(serializers.ModelSerializer):
 
     exercises = ExerciseSerializer(many=True, read_only=True)
+    user = serializers.StringRelatedField(read_only=True)
 
     class Meta:
         model = Workout

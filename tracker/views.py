@@ -19,6 +19,7 @@ class ExerciseViewSet(viewsets.ModelViewSet):
     serializer_class = ExerciseSerializer
 
     def get_queryset(self):
+        print("Inside Exercise Viewset")
         return Exercise.objects.filter(workout__user=self.request.user)
 
 class SetViewSet(viewsets.ModelViewSet):
