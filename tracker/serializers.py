@@ -4,7 +4,7 @@ from .models import Workout, Exercise, Set
 class SetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Set
-        fields = ["id", "set_number", "reps", "weight"]
+        fields = ["id", "exercise", "set_number", "reps", "weight"]
 
 class ExerciseSerializer(serializers.ModelSerializer):
 
@@ -18,7 +18,6 @@ class ExerciseSerializer(serializers.ModelSerializer):
         # print("inside get fields")
         fields = super().get_fields()
         request = self.context.get("request")
-        print(help(self))
         # print(self.context)
         if request and request.user.is_authenticated:
             fields["workout"].queryset = Workout.objects.filter(user=request.user)

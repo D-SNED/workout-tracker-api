@@ -27,3 +27,7 @@ class SetViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Set.objects.filter(exercise__workout__user=self.request.user)
+
+    def perform_create(self, serializer):
+        print(self.request.user)
+        
