@@ -1,33 +1,20 @@
 from rest_framework import viewsets
+from rest_framework.permissions import AllowAny
 from .models import Workout, Exercise, Set
 from .serializers import WorkoutSerializer, ExerciseSerializer, SetSerializer
 
 
 class WorkoutViewSet(viewsets.ModelViewSet):
+    queryset = Workout.objects.all()
     serializer_class = WorkoutSerializer
-
-    def get_queryset(self):
-        user = self.request.user
-        if user.is_authenticated:
-            return Workout.objects.filter(user=user)
-        return Workout.objects.none()
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+    permission_classes = [AllowAny]
 
 class ExerciseViewSet(viewsets.ModelViewSet):
+    queryset = Exercise.objects.all()
     serializer_class = ExerciseSerializer
-
-    def get_queryset(self):
-        print("Inside Exercise Viewset")
-        return Exercise.objects.filter(workout__user=self.request.user)
+    permission_classes = [AllowAny]
 
 class SetViewSet(viewsets.ModelViewSet):
+    queryset = Set.objects.all()
     serializer_class = SetSerializer
-
-    def get_queryset(self):
-        return Set.objects.filter(exercise__workout__user=self.request.user)
-
-    def perform_create(self, serializer):
-        print(self.request.user)
-        
+    permission_classes = [AllowAny]
