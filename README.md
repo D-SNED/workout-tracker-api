@@ -61,23 +61,24 @@ POST /api/workouts/
    ```
 
 2. Backend Setup
+
    ```
    cd backend
    python -m venv venv
    source venv/bin/activate # Mac/Linux
+   # venv\Scripts\activate # Windows
+   pip install -r requirements.txt
+   python manage.py migrate
+   python manage.py runserver
    ```
 
-# venv\Scripts\activate # Windows
-
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver 3. Frontend Setup
-cd frontend
-npm install
-npm start
-🔮 Future Improvements
-User authentication (JWT)
-Workout history and analytics
-Improved UI/UX styling
-Deployment (Render / Vercel)
-Pagination and filtering for workouts
+3. Frontend Setup
+   cd frontend
+   npm install
+   npm start
+   🔮 Future Improvements
+   User authentication (JWT)
+   Workout history and analytics
+   Improved UI/UX styling
+   Deployment (Render / Vercel)
+   Pagination and filtering for workouts
