@@ -15,17 +15,19 @@ Frontend
 - React
 - JavaScript
 
-## Tools
+Tools
 
 - Postman (API testing)
 - SQLite
-  ✨ Features
-  Create, read, update, and delete workouts
-  Manage exercises within workouts
-  RESTful API design with structured endpoints
-  React frontend consuming backend API
-  Modular and extensible backend architecture
-  🔌 API Overview
+
+## ✨ Features
+
+Create, read, update, and delete workouts
+Manage exercises within workouts
+RESTful API design with structured endpoints
+React frontend consuming backend API
+Modular and extensible backend architecture
+🔌 API Overview
 
 Example endpoints:
 
