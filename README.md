@@ -33,30 +33,39 @@ Tools
 Example endpoints:
 
 ```
-GET /api/workouts/ # Get all workouts
-POST /api/workouts/ # Create a new workout
-GET /api/workouts/:id # Get a single workout
-PUT /api/workouts/:id # Update a workout
-DELETE /api/workouts/:id # Delete a workout
+GET /api/workouts/  # Get all workouts
+POST /api/workouts/   # Create a new workout
+GET /api/workouts/:id   # Get a single workout
+PUT /api/workouts/:id   # Update a workout
+DELETE /api/workouts/:id  # Delete a workout
 ```
 
 Example request:
 
 POST /api/workouts/
 
+```
 {
 "name": "Push Day",
 "date": "2026-04-05"
 }
-⚙️ Getting Started
+```
+
+## ⚙️ Getting Started
 
 1. Clone the repo
+
+   ```
    git clone https://github.com/your-username/workout-tracker.git
    cd workout-tracker
+   ```
+
 2. Backend Setup
+   ```
    cd backend
    python -m venv venv
    source venv/bin/activate # Mac/Linux
+   ```
 
 # venv\Scripts\activate # Windows
 
