@@ -32,11 +32,13 @@ Tools
 
 Example endpoints:
 
+```
 GET /api/workouts/ # Get all workouts
 POST /api/workouts/ # Create a new workout
 GET /api/workouts/:id # Get a single workout
 PUT /api/workouts/:id # Update a workout
 DELETE /api/workouts/:id # Delete a workout
+```
 
 Example request:
 
