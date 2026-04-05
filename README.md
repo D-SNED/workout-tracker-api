@@ -73,12 +73,16 @@ POST /api/workouts/
    ```
 
 3. Frontend Setup
+   ```
    cd frontend
    npm install
    npm start
-   🔮 Future Improvements
-   User authentication (JWT)
-   Workout history and analytics
-   Improved UI/UX styling
-   Deployment (Render / Vercel)
-   Pagination and filtering for workouts
+   ```
+
+## 🔮 Future Improvements
+
+- User authentication (JWT)
+- Workout history and analytics
+- Improved UI/UX styling
+- Deployment (Render / Vercel)
+- Pagination and filtering for workouts
