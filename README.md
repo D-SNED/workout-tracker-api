@@ -1,8 +1,8 @@
-🏋️ Workout Tracker
+# 🏋️ Workout Tracker
 
 A full stack workout tracking application with a Django REST API and a lightweight React frontend. This project allows users to create, view, and manage workouts and exercises, demonstrating end-to-end client-server integration.
 
-🚀 Tech Stack
+## 🚀 Tech Stack
 
 Backend
 
@@ -12,20 +12,20 @@ Backend
 
 Frontend
 
-React
-JavaScript
+- React
+- JavaScript
 
-Tools
+## Tools
 
-Postman (API testing)
-SQLite / PostgreSQL (depending on what you used)
-✨ Features
-Create, read, update, and delete workouts
-Manage exercises within workouts
-RESTful API design with structured endpoints
-React frontend consuming backend API
-Modular and extensible backend architecture
-🔌 API Overview
+- Postman (API testing)
+- SQLite
+  ✨ Features
+  Create, read, update, and delete workouts
+  Manage exercises within workouts
+  RESTful API design with structured endpoints
+  React frontend consuming backend API
+  Modular and extensible backend architecture
+  🔌 API Overview
 
 Example endpoints:
 
