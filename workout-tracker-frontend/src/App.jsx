@@ -1,5 +1,11 @@
+import { BrowserRouter, Routes, Route } from "react-router";
+
 function App() {
-  return <div>Workout Tracker</div>;
+  return (
+    <BrowserRouter>
+      <div>Workout Tracker</div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
