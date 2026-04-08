@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 
 const Home = () => {
   const [workoutType, setWorkoutType] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -37,15 +38,22 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <div className="button-container submit-button">
-        <button
-          onClick={() => {
-            workoutType === "" ? console.log("what") : navigate("/workout");
-          }}
-        >
-          Create Workout
-        </button>
-      </div>
+      {workoutType === "" && error === true ? (
+        <div className="submit-button">
+          <button>Create Workout</button>
+          <p>Select workout type to create workout</p>
+        </div>
+      ) : (
+        <div className="button-container submit-button">
+          <button
+            onClick={() => {
+              workoutType === "" ? setError(true) : navigate("/workout");
+            }}
+          >
+            Create Workout
+          </button>
+        </div>
+      )}
     </div>
   );
 };
