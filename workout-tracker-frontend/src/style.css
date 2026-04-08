@@ -14,3 +14,33 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: absolute;
+  gap: 5px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+}
+
+.submit-button {
+  padding: 15px;
+}
+
+button {
+  width: 90%;
+}

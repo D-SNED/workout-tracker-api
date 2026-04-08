@@ -47,7 +47,8 @@ POST /api/workouts/
 ```
 {
 "name": "Push Day",
-"date": "2026-04-05"
+"date": "2026-04-05",
+"notes": "Chest, Shoulders and Triceps"
 }
 ```
 
@@ -56,27 +57,33 @@ POST /api/workouts/
 1. Clone the repo
 
    ```
-   git clone https://github.com/your-username/workout-tracker.git
-   cd workout-tracker
+   git clone https://github.com/D-SNED/workout-tracker-api.git
+   cd workout-tracker-api
    ```
 
 2. Backend Setup
 
    ```
-   cd backend
+   Make sure you are in the workout-tracker-api directory (cd workout-tracker-api)
    python -m venv venv
    source venv/bin/activate # Mac/Linux
    # venv\Scripts\activate # Windows
    pip install -r requirements.txt
    python manage.py migrate
    python manage.py runserver
+
+   the backend should run on localhost:8000
    ```
 
 3. Frontend Setup
+
    ```
-   cd frontend
+   open another terminal window (you will need two terminals run this app)
+   cd workout-tracker-frontend
    npm install
    npm start
+
+   the frontend should run on localhost:5173
    ```
 
 ## 🔮 Future Improvements

@@ -8,11 +8,17 @@ const Home = () => {
       <h1>Workout Tracker</h1>
       <p>What are you working out today?</p>
       <div className="home-buttons">
-        <button>Push</button>
-        <button>Pull</button>
-        <button>Legs</button>
+        <div className="button-container">
+          <button>Push</button>
+        </div>
+        <div className="button-container">
+          <button>Pull</button>
+        </div>
+        <div className="button-container">
+          <button>Legs</button>
+        </div>
       </div>
-      <div>
+      <div className="button-container submit-button">
         <button>Create Workout</button>
       </div>
     </div>
