@@ -44,3 +44,7 @@ p {
 button {
   width: 90%;
 }
+
+.button-active {
+  background-color: darkgray;
+}

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const Home = () => {
   const [workoutType, setWorkoutType] = useState("");
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -9,17 +11,40 @@ const Home = () => {
       <p>What are you working out today?</p>
       <div className="home-buttons">
         <div className="button-container">
-          <button>Push</button>
+          <button
+            className={workoutType === "push" ? "button-active" : ""}
+            onClick={() => setWorkoutType("push")}
+          >
+            Push
+          </button>
         </div>
         <div className="button-container">
-          <button>Pull</button>
+          <button
+            className={workoutType === "pull" ? "button-active" : ""}
+            onClick={() => setWorkoutType("pull")}
+            value="Pull"
+          >
+            Pull
+          </button>
         </div>
         <div className="button-container">
-          <button>Legs</button>
+          <button
+            className={workoutType === "legs" ? "button-active" : ""}
+            onClick={() => setWorkoutType("legs")}
+            value="Legs"
+          >
+            Legs
+          </button>
         </div>
       </div>
       <div className="button-container submit-button">
-        <button>Create Workout</button>
+        <button
+          onClick={() => {
+            workoutType === "" ? console.log("what") : navigate("/workout");
+          }}
+        >
+          Create Workout
+        </button>
       </div>
     </div>
   );
