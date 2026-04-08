@@ -38,22 +38,16 @@ const Home = () => {
           </button>
         </div>
       </div>
-      {workoutType === "" && error === true ? (
-        <div className="submit-button">
-          <button>Create Workout</button>
-          <p>Select workout type to create workout</p>
-        </div>
-      ) : (
-        <div className="button-container submit-button">
-          <button
-            onClick={() => {
-              workoutType === "" ? setError(true) : navigate("/workout");
-            }}
-          >
-            Create Workout
-          </button>
-        </div>
-      )}
+      <div className="submit-button button-container">
+        <button
+          onClick={() => {
+            workoutType === "" ? setError(true) : navigate("/workout");
+          }}
+        >
+          Create Workout
+        </button>
+        {error === true ? <p>Select a workout type to create</p> : null}
+      </div>
     </div>
   );
 };
