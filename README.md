@@ -64,10 +64,11 @@ POST /api/workouts/
 2. Backend Setup
 
    ```
-   Make sure you are in the workout-tracker-api directory (cd workout-tracker-api)
+   Make sure you are in the workout-tracker-api directory (cd workout-tracker-api), run the following commands:
+
    python -m venv venv
-   source venv/bin/activate # Mac/Linux
-   # venv\Scripts\activate # Windows
+   source venv/bin/activate (Mac/Linux)
+   # venv\Scripts\activate (Windows)
    pip install -r requirements.txt
    python manage.py migrate
    python manage.py runserver
@@ -78,7 +79,8 @@ POST /api/workouts/
 3. Frontend Setup
 
    ```
-   open another terminal window (you will need two terminals run this app)
+   open another terminal window (you will need two terminals to run this app), run the following commands:
+
    cd workout-tracker-frontend
    npm install
    npm start
